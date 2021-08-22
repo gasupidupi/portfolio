@@ -1,9 +1,14 @@
+import * as React from "react";
 import logo from './logo.svg';
-import './App.tsx';
 import ReactDOM from 'react-dom';
 import '@fontsource/roboto';
 import { Typography, Button, Grid, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { useState } from 'react';
+import { useHistory, Switch, Route, BrowserRouter } from "react-router-dom";
+import { Portfolio } from "./Pages/Portfolio";
+import { Welcome } from "./Pages/Welcome";
+
 
 const useStyles = makeStyles({
   root: {
@@ -19,28 +24,17 @@ const useStyles = makeStyles({
   },
 });
 
-function App() {
-  const classes = useStyles();
-
+export const App: React.FC = () => {
   return (
-    <div className={classes.root}>
-      <body className="Welcome-body">
-        <Grid>
-          <Grid item xs="auto">
-            <Typography variant="h1">Portfolio</Typography>
-          </Grid>
-          <Grid item xs="auto">
-            <Typography variant="h5">by Gabriel</Typography>
-          </Grid>
-          <Grid item xs="auto">
-            <Box m={1}>
-              <Button variant="contained" color="primary">Enter</Button>
-            </Box>
-          </Grid>
-        </Grid>
-      </body>
-    </div>
-  );
+    <>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/Portfolio" component={Portfolio} />
+          <Route path="/" component={Welcome} />
+        </Switch>
+      </BrowserRouter>
+    </>
+  )
 }
 
 export default App;
