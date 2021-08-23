@@ -28,14 +28,14 @@ export const Welcome: React.FC = () => {
   const classes = useStyles();
   const history = useHistory();
 
-  function enterClick() {
+  function startClick() {
     history.push('/Portfolio');
   }
   
 
   return (
     <>
-      <div className={classes.root}>
+      <Box className={classes.root}>
         <body className="Welcome-body">
           <Grid>
             <Grid item xs="auto">
@@ -46,12 +46,12 @@ export const Welcome: React.FC = () => {
             </Grid>
             <Grid item xs="auto">
               <Box m={1}>
-                <Button variant="contained" color="primary" onClick={enterClick}>Enter</Button>
+                <Button variant="contained" color="primary" onClick={startClick}>Start</Button>
               </Box>
             </Grid>
           </Grid>
         </body>
-      </div>
+      </Box>
     </>
   )
 }

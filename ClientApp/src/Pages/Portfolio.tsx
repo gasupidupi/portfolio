@@ -6,6 +6,7 @@ import { Typography, Button, Grid, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useState } from 'react';
 import { useHistory, Switch, Route } from "react-router-dom";
+import Fader from "../Components/Fader";
 
 
 const useStyles = makeStyles({
@@ -26,15 +27,18 @@ export const Portfolio: React.FC = () => {
 
   const classes = useStyles();
   const history = useHistory();
+  const text = ["Hi", "Are you my future employer?", "Let's find out!"]
+  const [visible, setVisible] = useState(false);
 
-  function enterClick() {
-    history.push('/Portfolio');
+  function onDone() {
+    setVisible(true);
   }
-  
 
   return (
     <>
-      <Typography>hi</Typography>
+      <Box className={classes.root}>
+        <Fader text={text} onDone={onDone} />
+      </Box>
     </>
   )
 }
