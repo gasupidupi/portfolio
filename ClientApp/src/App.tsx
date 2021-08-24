@@ -26,9 +26,20 @@ const useStyles = makeStyles({
 
 const theme = createTheme({
   overrides: {
+    MuiTable: {
+      root: {
+        width: '60%',
+        marginLeft: '20%',
+        marginRight: '20%',
+      },
+    },
     MuiTableCell: {
       body: {
         color: 'white',
+      },
+      head: {
+        color: 'white',
+        fontWeight: 'bold',
       },
     },
     MuiButton: {

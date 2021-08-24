@@ -11,39 +11,25 @@ import Gabriel from '../Assets/Gabriel.png';
 
 
 const useStyles = makeStyles({
-  root: {
-    backgroundColor: "#282c34",
-    minHeight: '100vh',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: 'calc(10px + 2vmin)',
-    color: 'white',
-  },
-  center: {
-    textAlign: 'center',
-  },
-  mainBox: {
-    component: {
-      padding: '1em',
-      margin: '1em',
-      display: 'block',
+    root: {
+        backgroundColor: "#282c34",
+        color: 'white',
+      },
+    center: {
+        textAlign: 'center',
     },
-  },
-  avatar: {
-    width: '80%',
-    height: '90%',
-    display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
+    avatar: {
+        width: '80%',
+        height: '90%',
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    },
 });
 
 export const Personal: React.FC = () => {
 
     const classes = useStyles();
-    const history = useHistory();
 
     function createData(title: string, information: string) {
         return { title, information };

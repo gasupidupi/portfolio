@@ -9,13 +9,13 @@ const useStyles = makeStyles({
     root: {
         backgroundColor: "#282c34",
         color: 'white',
-      },
+        },
     center: {
         textAlign: 'center',
     },
 });
 
-export const Professional: React.FC = () => {
+export const Languages: React.FC = () => {
 
     const classes = useStyles();
 
@@ -24,15 +24,16 @@ export const Professional: React.FC = () => {
     }
   
   const rows = [
-    createData('Aug 1, 2019 – Jul 31, 2021', 'Internship as «Informatiker EFZ», specialization: Application development at Balzano Informatik AG'),
-    createData('Aug 1, 2017 – Jul 31, 2021', 'Internship as «Informatiker EFZ», specialization: Application development at WISS Wirtschaftsinformatikschule Zürich'),
+    createData('German', 'Mother tongue'),
+    createData('English', 'Fluently'),
+    createData('French', 'Moderate'),
   ];
 
   return (
     <>
         <Grid container spacing={4}>  
             <Grid item xs={12}>
-                <Typography variant="h4" className={classes.center}>Professional education</Typography>
+                <Typography variant="h4" className={classes.center}>Languages</Typography>
                 <br />
                 <TableContainer>
                     <Table aria-label="simple table">
@@ -49,14 +50,9 @@ export const Professional: React.FC = () => {
                     </Table>
                 </TableContainer>
             </Grid>
-            <Grid item xs={12}>
-                <Typography variant="h4" className={classes.center}>Apprenticeship-Thesis (IPA)</Typography>
-                <br />
-                <Typography variant="body1" className={classes.center}>Title: Implement a Dicom Client Context Class for Unit Testing</Typography>
-            </Grid>
         </Grid>
     </>
   )
 }
 
-export default Professional;
+export default Languages;

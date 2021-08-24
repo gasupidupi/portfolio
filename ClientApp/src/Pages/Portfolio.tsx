@@ -9,6 +9,10 @@ import { useHistory, Switch, Route } from "react-router-dom";
 import Fader from "../Components/Fader";
 import Personal from "../Components/Personal";
 import Professional from "../Components/Professional";
+import Schools from "../Components/Schools";
+import Languages from "../Components/Languages";
+import Skills from "../Components/Skills";
+import Character from "../Components/Character";
 
 
 const useStyles = makeStyles({
@@ -52,6 +56,7 @@ export const Portfolio: React.FC = () => {
   const history = useHistory();
   const text = ["Hi", "Will you be my future employer?", "Let's find out!"]
   const [visible, setVisible] = useState(false);
+  const [chapter, setChapter] = useState(1);
 
   function createData(title: string, information: string) {
     return { title, information };
@@ -59,6 +64,14 @@ export const Portfolio: React.FC = () => {
 
   function onDone() {
     setVisible(true);
+  }
+
+  function nextChapter() {
+    setChapter(chapter + 1);
+  }
+
+  function previousChapter() {
+    setChapter(chapter - 1);
   }
 
   return (
@@ -72,17 +85,37 @@ export const Portfolio: React.FC = () => {
           <Container>
             <Grid container spacing={1}>
               <Grid item xs={1}>
-                <Box className={classes.arrow}>
-                  <Button>&#9664;</Button>
-                </Box>
+                {chapter > 1 &&
+                  <Box className={classes.arrow}>
+                    <Button onClick={previousChapter}>&#9664;</Button>
+                  </Box>
+                }
               </Grid>
               <Grid item xs={10}>
-                <Personal />
-                <Professional />
+                {chapter == 1 &&
+                  <Personal />
+                }
+                {chapter == 2 &&
+                  <Professional />
+                }
+                {chapter == 3 &&
+                  <Schools />
+                }
+                {chapter == 4 &&
+                  <Languages />
+                }
+                {chapter == 5 &&
+                  <Skills />
+                }
+                {chapter == 6 &&
+                  <Character />
+                }
               </Grid>
               <Grid item xs={1}>
                 <Box className={classes.arrow}>
-                  <Button>&#9654;</Button>
+                  {chapter < 6 &&
+                    <Button onClick={nextChapter}>&#9654;</Button>
+                  }
                 </Box>
               </Grid>
             </Grid>
