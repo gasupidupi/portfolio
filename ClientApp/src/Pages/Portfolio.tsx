@@ -1,11 +1,8 @@
 import * as React from "react";
-import logo from './logo.svg';
-import ReactDOM from 'react-dom';
 import '@fontsource/roboto';
-import { IconButton, Typography, Button, Grid, Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Container, SvgIcon, Avatar, CardMedia, Card, CardContent } from '@material-ui/core';
+import { Button, Grid, Box, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useState } from 'react';
-import { useHistory, Switch, Route } from "react-router-dom";
 import Fader from "../Components/Fader";
 import Personal from "../Components/Personal";
 import Professional from "../Components/Professional";
@@ -53,14 +50,9 @@ const useStyles = makeStyles({
 export const Portfolio: React.FC = () => {
 
   const classes = useStyles();
-  const history = useHistory();
   const text = ["Hi", "Will you be my future employer?", "Let's find out!"]
   const [visible, setVisible] = useState(false);
   const [chapter, setChapter] = useState(1);
-
-  function createData(title: string, information: string) {
-    return { title, information };
-  }
 
   function onDone() {
     setVisible(true);
@@ -92,22 +84,22 @@ export const Portfolio: React.FC = () => {
                 }
               </Grid>
               <Grid item xs={10}>
-                {chapter == 1 &&
+                {chapter === 1 &&
                   <Personal />
                 }
-                {chapter == 2 &&
+                {chapter === 2 &&
                   <Professional />
                 }
-                {chapter == 3 &&
+                {chapter === 3 &&
                   <Schools />
                 }
-                {chapter == 4 &&
+                {chapter === 4 &&
                   <Languages />
                 }
-                {chapter == 5 &&
+                {chapter === 5 &&
                   <Skills />
                 }
-                {chapter == 6 &&
+                {chapter === 6 &&
                   <Character />
                 }
               </Grid>

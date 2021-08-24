@@ -69,7 +69,7 @@ export const Fader: React.FC<FaderProps> = (props) => {
           }
         }, 2500);
         return () => clearInterval(timeout)
-    }, [fadeProp])
+    }, [fadeProp, classes.fadeIn, classes.fadeOut, currentTextItem, onDone, text.length])
 
     return (
         <>

@@ -1,12 +1,8 @@
 import * as React from "react";
-import logo from './logo.svg';
-import ReactDOM from 'react-dom';
 import '@fontsource/roboto';
-import { IconButton, Typography, Button, Grid, Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Container, SvgIcon, Avatar, CardMedia, Card, CardContent } from '@material-ui/core';
+import { Typography, Grid, Table, TableBody, TableCell, TableContainer, TableRow, Avatar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useState } from 'react';
-import { useHistory, Switch, Route } from "react-router-dom";
-import Fader from "../Components/Fader";
 import Gabriel from '../Assets/Gabriel.png';
 
 
