@@ -1,12 +1,8 @@
 import * as React from "react";
-import logo from './logo.svg';
-import ReactDOM from 'react-dom';
 import '@fontsource/roboto';
 import { Typography, Button, Grid, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { useState } from 'react';
-import { useHistory, Switch, Route, BrowserRouter } from "react-router-dom";
-import { Portfolio } from "./Portfolio";
+import { useHistory } from "react-router-dom";
 
 
 const useStyles = makeStyles({
@@ -18,7 +14,6 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: 'calc(10px + 2vmin)',
     color: 'white',
   },
 });
@@ -41,11 +36,11 @@ export const Welcome: React.FC = () => {
             <Typography variant="h1">Portfolio</Typography>
           </Grid>
           <Grid item xs="auto">
-            <Typography variant="h5">by Gabriel</Typography>
+            <Typography variant="h5">by Gabriel Schafflützel</Typography>
           </Grid>
           <Grid item xs="auto">
             <Box m={1}>
-              <Button variant="contained" color="primary" onClick={startClick}>Start</Button>
+              <Button onClick={startClick}>Start</Button>
             </Box>
           </Grid>
         </Grid>
