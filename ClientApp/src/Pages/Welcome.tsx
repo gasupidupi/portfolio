@@ -36,21 +36,19 @@ export const Welcome: React.FC = () => {
   return (
     <>
       <Box className={classes.root}>
-        <body className="Welcome-body">
-          <Grid>
-            <Grid item xs="auto">
-              <Typography variant="h1">Portfolio</Typography>
-            </Grid>
-            <Grid item xs="auto">
-              <Typography variant="h5">by Gabriel</Typography>
-            </Grid>
-            <Grid item xs="auto">
-              <Box m={1}>
-                <Button variant="contained" color="primary" onClick={startClick}>Start</Button>
-              </Box>
-            </Grid>
+        <Grid>
+          <Grid item xs="auto">
+            <Typography variant="h1">Portfolio</Typography>
           </Grid>
-        </body>
+          <Grid item xs="auto">
+            <Typography variant="h5">by Gabriel</Typography>
+          </Grid>
+          <Grid item xs="auto">
+            <Box m={1}>
+              <Button variant="contained" color="primary" onClick={startClick}>Start</Button>
+            </Box>
+          </Grid>
+        </Grid>
       </Box>
     </>
   )

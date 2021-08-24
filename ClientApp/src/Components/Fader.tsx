@@ -46,18 +46,18 @@ export const Fader: React.FC<FaderProps> = (props) => {
               setFadeProp({
                    fade: classes.fadeOut
               })
-              if(currentTextItem == text.length) {
-                onDone();
-                return () => clearInterval(timeout)
-              }
               await new Promise(f => setTimeout(f, 1000));
+              if(currentTextItem + 1 == text.length) {
+                onDone();
+                clearInterval(timeout);
+              }
               setCurrentTextItem(currentTextItem + 1);
            } else {
                 setFadeProp({
                    fade: classes.fadeIn
                 })
            }
-        }, 3000);
+        }, 2500);
         return () => clearInterval(timeout)
     }, [fadeProp])
 

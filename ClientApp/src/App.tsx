@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import ReactDOM from 'react-dom';
 import '@fontsource/roboto';
 import { Typography, Button, Grid, Box } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { createTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import { useState } from 'react';
 import { useHistory, Switch, Route, BrowserRouter } from "react-router-dom";
 import { Portfolio } from "./Pages/Portfolio";
@@ -24,15 +24,27 @@ const useStyles = makeStyles({
   },
 });
 
+const theme = createTheme({
+  overrides: {
+    MuiTableCell: {
+      body: {
+        color: 'white',
+      },
+    },
+  },
+});
+
 export const App: React.FC = () => {
   return (
     <>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/Portfolio" component={Portfolio} />
-          <Route path="/" component={Welcome} />
-        </Switch>
-      </BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <Switch>
+            <Route path="/Portfolio" component={Portfolio} />
+            <Route path="/" component={Welcome} />
+          </Switch>
+        </BrowserRouter>
+      </ThemeProvider>
     </>
   )
 }
