@@ -7,7 +7,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useState } from 'react';
 import { useHistory, Switch, Route } from "react-router-dom";
 import Fader from "../Components/Fader";
-import Gabriel from '../Assets/Gabriel.png';
+import Personal from "../Components/Personal";
+import Professional from "../Components/Professional";
 
 
 const useStyles = makeStyles({
@@ -24,6 +25,11 @@ const useStyles = makeStyles({
   center: {
     textAlign: 'center',
   },
+  arrow: {
+    position: 'relative',
+    top: '50%',
+    textAlign: 'center',
+  },
   mainBox: {
     component: {
       padding: '1em',
@@ -32,8 +38,8 @@ const useStyles = makeStyles({
     },
   },
   avatar: {
-    width: '200px',
-    height: 'auto',
+    width: '80%',
+    height: '90%',
     display: 'block',
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -50,14 +56,6 @@ export const Portfolio: React.FC = () => {
   function createData(title: string, information: string) {
     return { title, information };
   }
-  
-  const rows = [
-    createData('Address', '-'),
-    createData('Telephone', '+31 65 766 33 38'),
-    createData('E-Mail', 'schaffluetzel.gabriel@gmail.com'),
-    createData('Birthday', 'Oct 19, 2001'),
-    createData('Hometown', 'Neckertal SG'),
-  ];
 
   function onDone() {
     setVisible(true);
@@ -72,35 +70,19 @@ export const Portfolio: React.FC = () => {
         {visible &&
         <>
           <Container>
-            <Grid container spacing={4}>
-              <Grid item xs={12}>
-                <Box className={classes.center}>
-                  &#x25B2;
+            <Grid container spacing={1}>
+              <Grid item xs={1}>
+                <Box className={classes.arrow}>
+                  <Button>&#9664;</Button>
                 </Box>
               </Grid>
-              <Grid item xs={8}>
-                <Typography variant="h4">Personal data</Typography>
-                <TableContainer>
-                  <Table aria-label="simple table">
-                    <TableBody>
-                      {rows.map((row) => (
-                        <TableRow key={row.title}>
-                          <TableCell component="th" scope="row">
-                            {row.title}
-                          </TableCell>
-                          <TableCell align="right">{row.information}</TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
+              <Grid item xs={10}>
+                <Personal />
+                <Professional />
               </Grid>
-              <Grid item xs={4}>
-                <Avatar src={Gabriel} alt="Gabriel" className={classes.avatar}/>
-              </Grid>
-              <Grid item xs={12}>
-                <Box className={classes.center}>
-                  &#x25BC;
+              <Grid item xs={1}>
+                <Box className={classes.arrow}>
+                  <Button>&#9654;</Button>
                 </Box>
               </Grid>
             </Grid>

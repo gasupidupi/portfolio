@@ -31,6 +31,11 @@ const theme = createTheme({
         color: 'white',
       },
     },
+    MuiButton: {
+      text: {
+        color: 'white',
+      },
+    },
   },
 });
 
