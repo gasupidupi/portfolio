@@ -50,8 +50,7 @@ const useStyles = makeStyles({
 export const Portfolio: React.FC = () => {
 
   const classes = useStyles();
-  //const text = ["Hi", "Will you be my future employer?", "Let's find out!"]
-  const text = ["Hi Marielle", "Did you seriously think I'd ..", "show you the page without a personal message?", "Pathetic"]
+  const text = ["Hi", "Will you be my future employer?", "Let's find out!"]
   const [visible, setVisible] = useState(false);
   const [chapter, setChapter] = useState(1);
 
