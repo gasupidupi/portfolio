@@ -31,20 +31,21 @@ export const Personal: React.FC = () => {
         return { title, information };
     }
 
-    const [isMobile, setIsMobile] = useState(false)
- 
+    const [isMobile, setIsMobile] = useState(false);
+
     //choose the screen size 
     const handleResize = () => {
-    if (window.innerWidth < 900) {
-        setIsMobile(true)
-    } else {
-        setIsMobile(false)
-    }
+        if (window.innerWidth < 900) {
+            setIsMobile(true);
+        } else {
+            setIsMobile(false);
+        }
     }
 
     // create an event listener
     React.useEffect(() => {
-        window.addEventListener("resize", handleResize)
+        handleResize();
+        window.addEventListener("resize", handleResize);
     })
 
   

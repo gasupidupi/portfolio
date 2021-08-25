@@ -28,6 +28,12 @@ const theme = createTheme({
         color: 'white',
       },
     },
+    MuiGrid: {
+      root: {
+        marginBottom: '0 !important',
+        paddingBottom: '0 !important',
+      },
+    },
   },
 });
 

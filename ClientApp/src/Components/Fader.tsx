@@ -13,9 +13,21 @@ const useStyles = makeStyles({
     opacity: 0,
     transition: 'opacity 1s ease',
   },
+  vanish: {
+    opacity: 0,
+  },
   center: {
     textAlign: 'center',
-},
+  },
+  fadeBox: {
+    paddingLeft: '5%',
+    paddingRight: '5%',
+  },
+  skipBox: {
+    display: 'block',
+    position: 'absolute', 
+    bottom: 0,
+  },
 });
 
 type FaderProps = {
@@ -36,46 +48,57 @@ export const Fader: React.FC<FaderProps> = (props) => {
     });
 
     const [currentTextItem, setCurrentTextItem] = useState(0);
-    const [showSkip, setShowSkip] = useState(true);
+    const [showSkip, setShowSkip] = useState(false);
+    const [isSkipped, setIsSkipped] = useState(false);
 
     const { text, onDone } = props;
 
     function skip() {
-      setFadeProp({
-        fade: classes.fadeOut
-     });
+      setIsSkipped(true);
       setShowSkip(false);
-      setCurrentTextItem(text.length);
-      onDone();
     }
 
     React.useEffect(() => {
         const timeout = setInterval(async () => {
-          if (fadeProp.fade === classes.fadeIn) {
+          if(!isSkipped) {
+            if(currentTextItem === 1) {
+              setShowSkip(true);
+            }
+            if (fadeProp.fade === classes.fadeIn) {
+              setFadeProp({
+                    fade: classes.fadeOut
+              })
+              await new Promise(f => setTimeout(f, 1000));
+              if(currentTextItem + 1 >= text.length) {
+                setShowSkip(false);
+                onDone();
+                clearInterval(timeout);
+              }
+              setCurrentTextItem(currentTextItem + 1);
+            } else {
+                setFadeProp({
+                    fade: classes.fadeIn
+                })
+            }
+          } else {
             setFadeProp({
-                  fade: classes.fadeOut
+              fade: classes.fadeOut
             })
             await new Promise(f => setTimeout(f, 1000));
-            if(currentTextItem + 1 >= text.length) {
-              setShowSkip(false);
-              onDone();
-              clearInterval(timeout);
-            }
-            setCurrentTextItem(currentTextItem + 1);
-          } else {
-              setFadeProp({
-                  fade: classes.fadeIn
-              })
+            onDone();
+            clearInterval(timeout);
           }
         }, 2500);
         return () => clearInterval(timeout)
-    }, [fadeProp, classes.fadeIn, classes.fadeOut, currentTextItem, onDone, text.length])
+    }, [fadeProp, classes.fadeIn, classes.fadeOut, currentTextItem, onDone, text.length, isSkipped])
 
     return (
         <>
-          <Typography className={fadeProp.fade} variant="h2">{text[currentTextItem]}</Typography>
+          <Box className={classes.fadeBox}>
+            <Typography className={fadeProp.fade} variant="h2">{text[currentTextItem]}</Typography>
+          </Box>
           {showSkip &&
-            <Box className={classes.center}>
+            <Box className={classes.skipBox}>
               <Button onClick={skip}>skip</Button>
             </Box>
           }

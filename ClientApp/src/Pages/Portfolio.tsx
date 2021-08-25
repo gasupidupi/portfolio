@@ -69,9 +69,7 @@ export const Portfolio: React.FC = () => {
   return (
     <>
       <Box className={classes.root}>
-        <Box className={classes.center}>
-          <Fader text={text} onDone={onDone} />
-        </Box>
+        <Fader text={text} onDone={onDone} />
         {visible &&
         <>
           <Container>
@@ -83,7 +81,7 @@ export const Portfolio: React.FC = () => {
                   </Box>
                 }
               </Grid>
-              <Grid item xs={10}>
+              <Grid item xs={9}>
                 {chapter === 1 &&
                   <Personal />
                 }
@@ -103,7 +101,7 @@ export const Portfolio: React.FC = () => {
                   <Character />
                 }
               </Grid>
-              <Grid item xs={1}>
+              <Grid item xs={2}>
                 <Box className={classes.arrow}>
                   {chapter < 6 &&
                     <Button onClick={nextChapter}>&#9654;</Button>

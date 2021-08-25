@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 const useStyles = makeStyles({
   root: {
     textAlign: 'center',
-    backgroundColor: "#282c34",
+    backgroundColor: '#282c34',
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
