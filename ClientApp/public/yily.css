@@ -1,0 +1,42 @@
+body {
+  background-color: rgb(30,30,30);
+  color: rgb(110,201,199);
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  font-weight: 50;
+  letter-spacing: 2px;
+}
+#navigation {
+  text-align: center;
+  width: 5em;
+  background-color: rgb(253,246,175);
+  border: 5px solid rgb(250,136,193);
+  float: left;
+  margin: 1em 0 0 1em;
+  position: fixed;
+  opacity: 0.2;
+  transition-duration: 500ms;
+}
+#navigation:hover, #navigation:active {
+  opacity: 0.9;
+  transition-duration: 500ms;
+}
+#navigation ul {
+  list-style-type: none;
+  margin: 1em;
+  padding: 0;
+}
+#navigation ul li a {
+  color: rgb(250,136,193);
+  text-decoration: none;
+}
+#content {
+  background-color: rgb(30,30,30);
+  color: rgb(110,201,199);
+  height: 100%;
+  width: auto;
+  display: inline;
+}
+html {
+  scroll-behavior: smooth;
+}
