@@ -40,3 +40,6 @@ body {
 html {
   scroll-behavior: smooth;
 }
+.section {
+  margin: auto 0.5em 2em 0.5em;
+}
