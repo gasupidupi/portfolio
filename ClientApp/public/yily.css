@@ -8,6 +8,12 @@ body, html {
   padding: 0px;
   margin: 0px;
 }
+h1 {
+  text-align: center;
+  font-size: 80px;
+  margin: 1.5em 0 1.5em 0;
+  color: rgb(39,109,111);
+}
 #navigation {
   text-align: center;
   width: 10em;
