@@ -10,7 +10,7 @@ body, html {
 }
 h1 {
   text-align: center;
-  font-size: 80px;
+  font-size: 5em;
   margin: 1.5em 0 1.5em 0;
   color: rgb(39,109,111);
 }
@@ -30,7 +30,7 @@ h1 {
   opacity: 0.9;
   transition-duration: 500ms;
   height: auto;
-  font-size: 60px;
+  font-size: 3.5em;
   filter: none;
   margin: 0 0 0 25px;
   height: auto;
@@ -58,6 +58,6 @@ html {
 }
 .section {
   color: rgb(110,201,199);
-  font-size: 40px;
+  font-size: 2.5em;
   margin: auto 0.5em 2em 0.5em;
 }
