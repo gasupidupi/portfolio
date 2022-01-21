@@ -10,7 +10,7 @@ body, html {
 }
 #navigation {
   text-align: center;
-  width: 5em;
+  width: 10em;
   background-color: rgb(253,246,175);
   border: 5px solid rgb(250,136,193);
   float: left;
@@ -24,7 +24,7 @@ body, html {
   opacity: 0.9;
   transition-duration: 500ms;
   height: auto;
-  font-size: 40px;
+  font-size: 60px;
   filter: none;
   margin: 0 0 0 25px;
   height: auto;
@@ -52,6 +52,6 @@ html {
 }
 .section {
   color: rgb(110,201,199);
-  font-size: 20px;
+  font-size: 40px;
   margin: auto 0.5em 2em 0.5em;
 }
