@@ -46,7 +46,7 @@ export const Professional: React.FC = () => {
     const rows = [
         createData('Aug 1, 2019 – Jul 31, 2021', 'Apprenticeship as «Informatiker EFZ», specialization: Application development at Balzano Informatik AG'),
         createData('Aug 1, 2017 – Jul 31, 2021', 'Apprenticeship as «Informatiker EFZ», specialization: Application development at WISS Wirtschaftsinformatikschule Zürich'),
-        createData('Dec 6, 2021 – now', 'Language Data Analyst'),
+        createData('Dec 6, 2021 – now', 'Language Data Analyst at TransPerfect'),
     ];
 
     return (

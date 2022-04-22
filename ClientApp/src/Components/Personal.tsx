@@ -50,8 +50,8 @@ export const Personal: React.FC = () => {
 
   
   const rows = [
-    createData('Address', '-'),
-    createData('Telephone', '+31 65 766 33 38'),
+    createData('Address', 'Karolkowa 9, 01-207 Warszawa'),
+    createData('Telephone', '+48 539 793 369'),
     createData('E-Mail', 'schaffluetzel.gabriel@gmail.com'),
     createData('Birthday', 'Oct 19, 2001'),
     createData('Hometown', 'Neckertal SG'),
